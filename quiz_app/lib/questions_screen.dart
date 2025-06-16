@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 //import 'package:flutter/material.dart';
 import 'package:quiz_app/models/answer_button.dart';
 import 'package:quiz_app/models/quiz_question.dart';
 import 'package:quiz_app/data/questions.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 //statefull 
 class QuestionsScreen extends StatefulWidget{
@@ -55,7 +57,7 @@ var currentQuestion = questions[currentQuestionIndex];
   return SizedBox(
     width:double.infinity,
     child: Container(
-      margin: EdgeInsets.all(100),
+      margin: EdgeInsets.fromLTRB(250, 100, 250, 100),
       child: Column(
         //centering the content - vertical alignment
         mainAxisAlignment: MainAxisAlignment.center,
@@ -66,11 +68,14 @@ var currentQuestion = questions[currentQuestionIndex];
           Text(
           currentQuestion.text,
           textAlign: TextAlign.center,
-           style:TextStyle(
-            color:  CupertinoColors.extraLightBackgroundGray,
+           style: GoogleFonts.lato(
+            color: const Color.fromARGB(255, 250, 227, 198),
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+           ),
             
             
-          ),),
+          ),
           //some spacing
           const SizedBox(height: 50,),
         //accessing a lis and mapping it to a widget instead of manually calling it 

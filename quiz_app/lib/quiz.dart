@@ -8,6 +8,7 @@ import 'package:quiz_app/start_screen.dart';
 class Quiz extends StatefulWidget {
   //constructor
   Quiz({super.key});
+
   //state create state wala
   State<Quiz> createState() {
     // return _classname
@@ -17,10 +18,18 @@ class Quiz extends StatefulWidget {
 
 // _classname extends state
 class _QuizState extends State<Quiz> {
-  // store the startscreen widget in a variable
-  // for the active screen variable to be less restrictive and accepts all widgets instead of just start screen use widget instead of
-  //? means accepts null value
+  /*  store the startscreen widget in a variable
+   for the active screen variable to be less restrictive and accepts all widgets instead of just start screen use widget instead of
+  //? means accepts null value */
+
+  //store list of chosed answers for the result screen
+  final List<String> selectedAnswers =[];
   var activeScreen = 'start-screen';
+
+  //function to add the chosen answers to the list
+  void chooseAnswer(String answer){
+    selectedAnswers.add(answer);
+  }
 
   // a function to switch screen tothe questions screen
   void switchScreen() {
@@ -37,7 +46,7 @@ class _QuizState extends State<Quiz> {
     Widget screenWidget = StartScreen(switchScreen);
 
     if(activeScreen == 'questions-screen'){
-      screenWidget = QuestionsScreen();
+      screenWidget = QuestionsScreen(onSelectAnswer : chooseAnswer,);
     }
 
     //retun material app with all its content

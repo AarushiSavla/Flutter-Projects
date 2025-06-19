@@ -10,7 +10,10 @@ import 'package:google_fonts/google_fonts.dart';
 class QuestionsScreen extends StatefulWidget{
 //constructor
 
-  QuestionsScreen({super.key});
+  QuestionsScreen({super.key,required this.onSelectAnswer});
+
+  void Function(String answer)onSelectAnswer;
+
 
 @override
 State <QuestionsScreen> createState() {
@@ -25,11 +28,13 @@ return _QuestionsScreenState();
 //class the above returned widget extends state
 class  _QuestionsScreenState extends State<QuestionsScreen> {
   
+
   var currentQuestionIndex = 0;
 
 //method to increase the question index 
- void answerQuestion(){
+ void answerQuestion(String selectedAnswers){
 
+  widget.onSelectAnswer(selectedAnswers);
 //to reexecute build method 
 setState(() {
   
@@ -84,7 +89,10 @@ var currentQuestion = questions[currentQuestionIndex];
           return Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              AnswerButton(answer,answerQuestion),
+              AnswerButton(answer,
+              /*on tap: */(){
+                answerQuestion(answer);
+              }),
               SizedBox(height: 20)
             ],
           );

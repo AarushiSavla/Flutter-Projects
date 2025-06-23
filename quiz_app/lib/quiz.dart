@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quiz_app/questions_screen.dart';
 import 'package:quiz_app/start_screen.dart';
 import 'package:quiz_app/data/questions.dart';
+import 'package:quiz_app/results_screen.dart';
 
 //shoukd contain material app
 //should be stateful widget
@@ -34,7 +35,7 @@ class _QuizState extends State<Quiz> {
   //when the questions are over switch bto results screen 
   if (selectedAnswers.length==questions.length){
     setState(() {
-      selectedAnswers=[];      activeScreen = 'start-screen';
+      selectedAnswers=[];      activeScreen = 'results-screen';
     });
   }
 
@@ -57,6 +58,11 @@ class _QuizState extends State<Quiz> {
     if(activeScreen == 'questions-screen'){
       screenWidget = QuestionsScreen(onSelectAnswer : chooseAnswer,);
     }
+
+        if(activeScreen == 'results-screen'){
+      screenWidget = ResultsScreen();
+    }
+
 
     //retun material app with all its content
     return MaterialApp(

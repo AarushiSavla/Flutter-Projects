@@ -35,7 +35,7 @@ class _QuizState extends State<Quiz> {
   //when the questions are over switch bto results screen 
   if (selectedAnswers.length==questions.length){
     setState(() {
-      selectedAnswers=[];      activeScreen = 'results-screen';
+          activeScreen = 'results-screen';
     });
   }
 
@@ -46,6 +46,8 @@ class _QuizState extends State<Quiz> {
     //setState makes the build method re-execute
     setState(() {
       activeScreen = 'questions-screen';
+
+    
     });
   }
 

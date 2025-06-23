@@ -60,7 +60,7 @@ class _QuizState extends State<Quiz> {
     }
 
         if(activeScreen == 'results-screen'){
-      screenWidget = ResultsScreen();
+      screenWidget = ResultsScreen(chosenAnswer: selectedAnswers,);
     }
 
 

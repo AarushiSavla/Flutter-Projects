@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:quiz_app/quiz.dart';
 
 class ResultsScreen extends StatelessWidget{
+
+ResultsScreen({super.key, required this.chosenAnswer})
+
+  List<String> chosenAnswer;
+
   var activeScreen = 'results-screen';
    Widget build(content){
     return SizedBox(
@@ -15,11 +20,11 @@ class ResultsScreen extends StatelessWidget{
             Text('list of answers'),
                SizedBox(height: 30,),
                TextButton(onPressed: (){
-               setState(){
-                if (activeScreen== 'results-screen'){
-                  activeScreen='start-screen';
-                }
-               }
+               //setState(){
+               // if (activeScreen== 'results-screen'){
+               //   activeScreen='start-screen';
+               // }
+               //}
                }, child: Text('restart quiz'))
                       ],
         ),

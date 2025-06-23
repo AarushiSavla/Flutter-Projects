@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/questions_screen.dart';
 import 'package:quiz_app/start_screen.dart';
+import 'package:quiz_app/data/questions.dart';
 
 //shoukd contain material app
 //should be stateful widget
@@ -23,12 +24,20 @@ class _QuizState extends State<Quiz> {
   //? means accepts null value */
 
   //store list of chosed answers for the result screen
-  final List<String> selectedAnswers =[];
+  List<String> selectedAnswers =[];
   var activeScreen = 'start-screen';
 
   //function to add the chosen answers to the list
   void chooseAnswer(String answer){
     selectedAnswers.add(answer);
+
+  //when the questions are over switch bto results screen 
+  if (selectedAnswers.length==questions.length){
+    setState(() {
+      selectedAnswers=[];      activeScreen = 'start-screen';
+    });
+  }
+
   }
 
   // a function to switch screen tothe questions screen

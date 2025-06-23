@@ -7,8 +7,7 @@ void main() {
 }
 
 
-/* Container(
-          color: const Color.fromARGB(197, 103, 70, 202),
+/* Container( Color.fromARGB(197, 103, 70, 202),
           child: Center(
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -21,6 +20,7 @@ void main() {
                     color: const Color.fromARGB(255, 163, 146, 210),
                   ),
                 ),
+          color: const
               ],
             ),
           ),

@@ -27,16 +27,25 @@ class ResultsScreen extends StatelessWidget {
   }
 
   var activeScreen = 'results-screen';
+  
+    
   Widget build(BuildContext content) {
+
+     final summaryData = getSummaryData();
+    final numTotalQues = questions.length;
+    final numCorrectQues = summaryData.where((data){
+      return data['user_answer']==data['correct_answer'];
+    }).length;
+
     return SizedBox(
       width: double.infinity,
       child: Container(
         margin: EdgeInsets.fromLTRB(250, 50, 250, 10),
         child: Column(
           children: [
-            QuestionsSummary(getSummaryData()),
+             Text('$numCorrectQues out of $numTotalQues answered correctly'),
             SizedBox(height: 30),
-            Text('list of answers'),
+            QuestionsSummary(summaryData),
             SizedBox(height: 30),
             TextButton(
               onPressed: () {

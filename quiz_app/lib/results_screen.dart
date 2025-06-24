@@ -31,7 +31,7 @@ class ResultsScreen extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       child: Container(
-        margin: EdgeInsets.fromLTRB(250, 200, 250, 100),
+        margin: EdgeInsets.fromLTRB(250, 50, 250, 10),
         child: Column(
           children: [
             QuestionsSummary(getSummaryData()),

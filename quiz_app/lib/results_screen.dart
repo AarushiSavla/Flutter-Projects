@@ -1,8 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:quiz_app/data/questions.dart';
 import 'package:quiz_app/quiz.dart';
 import 'package:quiz_app/models/quiz_question.dart';
 import 'package:quiz_app/questions_summary.dart';
+import 'package:quiz_app/start_screen.dart';
 
 class ResultsScreen extends StatelessWidget {
   ResultsScreen({super.key, required this.chosenAnswer});
@@ -43,18 +45,16 @@ class ResultsScreen extends StatelessWidget {
         margin: EdgeInsets.fromLTRB(250, 50, 250, 10),
         child: Column(
           children: [
-             Text('$numCorrectQues out of $numTotalQues answered correctly'),
+             Text('$numCorrectQues out of $numTotalQues answered correctly',style: TextStyle(
+              color:CupertinoColors.extraLightBackgroundGray,
+              fontSize: 20,
+             ),
+             textAlign: TextAlign.center,),
             SizedBox(height: 30),
             QuestionsSummary(summaryData),
             SizedBox(height: 30),
             TextButton(
-              onPressed: () {
-                //setState(){
-                // if (activeScreen== 'results-screen'){
-                //   activeScreen='start-screen';
-                // }
-                //}
-              },
+              onPressed: () { },
               child: Text('restart quiz'),
             ),
           ],

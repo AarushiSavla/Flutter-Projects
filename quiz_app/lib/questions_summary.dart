@@ -14,10 +14,13 @@ class QuestionsSummary extends StatelessWidget {
     return SizedBox(
       height: 300,
       child: SingleChildScrollView(
+        
         child: Column(
+         
           //convert the list of map ob to list of widgets
           children:
               summaryData.map((data) {
+                
 return QuestionsSummaryItem(
                   questionIndex: data['question_index']as int,
                   question: data['question'] as String,

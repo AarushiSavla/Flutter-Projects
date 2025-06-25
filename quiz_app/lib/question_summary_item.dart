@@ -23,10 +23,14 @@ class QuestionsSummaryItem extends StatelessWidget {
     var isCorrect = userAnswer == correctAnswer;
 
     return Row(
+      
+      crossAxisAlignment: CrossAxisAlignment.center,
+      
       children: [
         //circle question index
         Container(
           //width height box alignment box decoration - shape and color
+          
           width: 20,
           height: 20,
           alignment: Alignment.center,
@@ -48,7 +52,9 @@ class QuestionsSummaryItem extends StatelessWidget {
         //column which contains the question , user answer in purple and correct answer in yellow
         Expanded(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center ,
             children: [
+              SizedBox(height: 5,),
               Text(
                 question,
                 style: TextStyle(color: Colors.white, fontSize: 20),

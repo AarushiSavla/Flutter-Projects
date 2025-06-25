@@ -7,9 +7,10 @@ import 'package:quiz_app/questions_summary.dart';
 import 'package:quiz_app/start_screen.dart';
 
 class ResultsScreen extends StatelessWidget {
-  ResultsScreen({super.key, required this.chosenAnswer});
+  ResultsScreen({super.key, required this.chosenAnswer,required this.onPressed });
 
   final List<String> chosenAnswer;
+  final Function() onPressed;
 
   //function to map ques with correct ans
 
@@ -42,8 +43,10 @@ class ResultsScreen extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       child: Container(
-        margin: EdgeInsets.fromLTRB(250, 50, 250, 10),
+        margin: EdgeInsets.only(right: 250,left: 250),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
              Text('$numCorrectQues out of $numTotalQues answered correctly',style: TextStyle(
               color:CupertinoColors.extraLightBackgroundGray,
@@ -54,7 +57,7 @@ class ResultsScreen extends StatelessWidget {
             QuestionsSummary(summaryData),
             SizedBox(height: 30),
             TextButton(
-              onPressed: () { },
+              onPressed: onPressed,
               child: Text('restart quiz'),
             ),
           ],

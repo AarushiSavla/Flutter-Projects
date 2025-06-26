@@ -5,6 +5,7 @@ import 'package:quiz_app/quiz.dart';
 import 'package:quiz_app/models/quiz_question.dart';
 import 'package:quiz_app/questions_summary.dart';
 import 'package:quiz_app/start_screen.dart';
+import 'package:quiz_app/restart_button.dart';
 
 class ResultsScreen extends StatelessWidget {
   ResultsScreen({super.key, required this.chosenAnswer,required this.onPressed });
@@ -56,9 +57,10 @@ class ResultsScreen extends StatelessWidget {
             SizedBox(height: 30),
             QuestionsSummary(summaryData),
             SizedBox(height: 30),
-            TextButton(
+            RestartButton(
               onPressed: onPressed,
-              child: Text('restart quiz'),
+          
+            
             ),
           ],
         ),
